@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Sono", sans-serif;
+        background-color: #f5f5dc; /* Light gray */
+        margin: 0;
+        padding: 0;
+      }
+    
+      h1 {
+        text-align: center;
+        font-size: 64px;
+        font-weight: bold;
+        color: #2c3e50; /* Dark blue */
+        margin-top: 50px;
+        margin-bottom: 10px;
+        animation: fadeInDown 1s ease;
+      }
+    
+      .p {
+        text-align: center;
+        margin-top: -10px;
+        color: #34495e; /* Gray */
+        margin-bottom: 30px;
+      }
+    
+      .whale {
+        font-size: 150px;
+      }
+    
+      .pricing-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 40px;
+        background-image: url(https://t4.ftcdn.net/jpg/04/27/21/69/360_F_427216979_4arPHw2nV0S0d0ZW1eGjL2nWHzXyOedJ.jpg);
+        background-size: cover;
+        background-position: center;
+        opacity: 0.9;
+      }
+    
+      .pricing-plan {
+        max-width: 350px;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        text-align: center;
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: transform 0.3s;
+        animation: moveUp 0.5s ease-in-out;
+      }
+    
+      .pricing-plan:hover {
+        transform: scale(1.05);
+      }
+    
+      .Pricing-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+    
+      .plan-price {
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+    
+      .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 20px;
+      }
+    
+      .plan-features li {
+        margin-bottom: 10px;
+      }
+    
+      .plan-button {
+        background-color: orangered;
+        color: azure;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 20px;
+        cursor: pointer;
+      }
+    
+      @media (max-width: 1250px) {
+        .pricing-container {
+          flex-direction: column;
+          padding: 20px;
+        }
+      }
+    
+      .our-services {
+        color: #2c3e50;
+        text-align: center;
+        margin: 50px 0;
+        font-size: 60px;
+        font-weight: bold;
+        text-decoration: underline;
+        animation: fadeIn 1s ease;
+      }
+    
+      .service-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+        background-color: #ecf0f1;
+        padding: 60px 0;
+        margin: 50px 0;
+      }
+    
+      .individual-service-container {
+        padding: 20px;
+        max-width: 300px;
+        background-color: #ffffff;
+        border-radius: 7px;
+        text-align: center;
+        animation: fadeIn 1s ease;
+      }
+    
+      .service-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+    
+      .baground-image-container-1 {
+        height: 250px;
+        background-image: url(https://morelliscleaners.com/wp-content/uploads/2020/08/ironing-clothes-on-ironing-board.jpg); /* Replace with the actual URL */
+        background-size: cover;
+        background-position: center;
+        border-radius: 7px;
+        margin-bottom: 20px;
+      }
+    
+      .baground-image-container-2 {
+        height: 250px;
+        background-image: url(https://media.istockphoto.com/id/1132394825/photo/beautiful-thoughtful-woman-looking-away-while-delivering-dry-cleaned-clothes.jpg?s=612x612&w=0&k=20&c=qwuYS1ekxwiu7Oqk17NkKINcripvd31IKS-Xb8idWKA=); /* Replace with the actual URL */
+        background-size: cover;
+        background-position: center;
+        border-radius: 7px;
+        margin-bottom: 20px;
+      }
+    
+      .baground-image-container-3 {
+        height: 250px;
+        background-image: url(https://inthewash.co.uk/wp-content/uploads/2022/06/how-to-hand-wash-clothes.jpg); /* Replace with the actual URL */
+        background-size: cover;
+        background-position: center;
+        border-radius: 7px;
+        margin-bottom: 20px;
+      }
+    
+      .wash {
+        display: flex;
+        justify-content: space-around;
+        margin: 60px 0;
+      }
+    
+      .wash img {
+        border-radius: 18px;
+        transition: transform 0.3s;
+        width: 100%;
+        max-width: 200px;
+      }
+    
+      .wash img:hover {
+        transform: scale(1.05);
+      }
+    
+      .service-highlights {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin: 50px 20px;
+      }
+    
+      .highlight-container {
+        max-width: 350px;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        padding: 25px;
+        text-align: center;
+        animation: fadeInUp 1s ease;
+      }
+    
+      .highlight-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+    
+      .highlight-body {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+    
+      p {
+        margin-bottom: 20px;
+        max-width: 600px;
+        font-size: 18px;
+        text-align: left;
+      }
+    
+      .wash-essential {
+        display: flex;
+        justify-content: space-around;
+        margin: 60px 20px;
+      }
+    
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    
+      @keyframes moveUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  <body>
+    <div>
+      <div>
+        <h1>LOGO</h1>
+      </div>
+    </div>
+    <h1>Ola Whales Laundry<span class="whale">🐋</span></h1>
+    <div class="p">Washing away worries, one stain at a time</div>
+    <div class="pricing-container">
+      <div class="pricing-plan">
+        <div class="Pricing-title">Basic Wash</div>
+        <div class="plan-price">$11.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 10kg Laundry</li>
+          <li>✅ 1 Pickup/Delivery</li>
+          <li>🚫 No Special Services</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+
+      <div class="pricing-plan">
+        <div class="Pricing-title">Standard Wash</div>
+        <div class="plan-price">$19.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 25kg Laundry</li>
+          <li>✅ 3 Pickup/Delivery</li>
+          <li>✅ Ironing Included</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+
+      <div class="pricing-plan">
+        <div class="Pricing-title">Premium Wash</div>
+        <div class="plan-price">$49.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 50kg Laundry</li>
+          <li>✅ Unlimited Pickup/Delivery</li>
+          <li>✅ Express Service Available</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+    </div>
+
+    <div class="our-services">Our Services</div>
+    <div class="service-container">
+      <div class="individual-service-container">
+        <div class="service-title">Washing & Ironing</div>
+        <div class="baground-image-container-1"></div>
+      </div>
+
+      <div class="individual-service-container">
+        <div class="service-title">Pickup & Delivery</div>
+        <div class="baground-image-container-2"></div>
+      </div>
+
+      <div class="individual-service-container">
+        <div class="service-title">Special Care for Delicates</div>
+        <div class="baground-image-container-3"></div>
+      </div>
+    </div>
+
+    <div id="bg-img">
+      <div class="wash">
+        <img src="./wash .png" alt="wash and fold image caption" />
+        <img src="./wash and fold.png" alt="a woman properly arranging laundry" />
+      </div>
+
+      <div class="service-highlights">
+        <div class="highlight-container">
+          <div class="highlight-title">Schedule a pickup</div>
+          <div class="highlight-body">
+            You can schedule a pickup any day of the week. Your Valet will
+            arrive with your free, personalized Rinse bags between 8pm and 10pm
+            to pick up your clothes.
+          </div>
+        </div>
+
+        <div id="self" class="highlight-container">
+          <div class="highlight-title">Professional cleaning care</div>
+          <div class="highlight-body">
+            Lights and darks are separated and washed in cold water.
+            Hypoallergenic detergent and fabric softener are free upon request.
+          </div>
+        </div>
+
+        <div class="highlight-container">
+          <div class="highlight-title">Ready to wear</div>
+          <div class="highlight-body">
+            Your clothes are delivered to your door, crisply folded and your
+            socks paired, ready to be worn or put into drawers.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dry" class="wash">
+      <img src="./drycleaning.png" alt="/drycleaning image caption" />
+      <img
+        src="./drycleaning 2.png"
+        alt="a woman properly arranging laundry"
+      />
+    </div>
+
+    <div class="service-highlights">
+      <div class="highlight-container">
+        <div class="highlight-title">Your clothes tracked</div>
+        <div class="highlight-body">
+          You can schedule a pickup any day of the week. We’ll email you a photo
+          and itemized inventory of everything being cleaned.
+        </div>
+      </div>
+
+      <div id="self" class="highlight-container">
+        <div class="highlight-title">Expert cleaning and stain removal</div>
+        <div class="highlight-body">
+          We carefully follow the care label and inspect your clothes for stains
+          to ensure they receive the optimal treatment.
+        </div>
+      </div>
+
+      <div class="highlight-container">
+        <div class="highlight-title">Pressed and returned on hangers</div>
+        <div class="highlight-body">
+          Your clothes are delivered to your door crisply pressed, put on
+          hangers, placed in protective garment bags, and ready to wear.
+        </div>
+      </div>
+    </div>
+
+    <div class="wash-essential">
+      <div class="yfirst">
+        Your first pickup <span class="spn">essentials.</span>
+      </div>
+      <div>
+        <p class="essentials">
+          Your Valet will always arrive between 8pm and 10pm.
+        </p>
+        <p>At 5:30pm, we’ll text you a 30-minute ETA window.</p>
+        <p>
+          We’ll also send a link to track your Valet, and your order once it’s
+          picked up.
+        </p>
+        <p>
+          Your Valet will bring your free, personalized Rinse bags. Just have
+          your clothes ready by the door
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
